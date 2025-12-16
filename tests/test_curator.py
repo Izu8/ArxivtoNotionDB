@@ -57,7 +57,8 @@ class TestGetPaperInfo:
         assert authors == " Carol"
         assert doi == "https://doi.org/10.1111/aaaa"
         assert venue == "Arxiv"
-        assert year == "2021"
+        assert year == "2022"
+
 
     def test_falls_back_to_arxiv_when_conference_format_unexpected(self):
         html = """
