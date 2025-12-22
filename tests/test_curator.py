@@ -31,8 +31,8 @@ class TestGetPaperInfo:
         info.implement()
 
         assert info.get_extracted_info() == (
-            " My Great Paper",  
-            " Alice, Bob",      
+            " My Great Paper",
+            " Alice, Bob",
             "https://doi.org/10.1000/xyz123",
             "MICCAI",
             "2023",
@@ -58,7 +58,6 @@ class TestGetPaperInfo:
         assert doi == "https://doi.org/10.1111/aaaa"
         assert venue == "Arxiv"
         assert year == "2022"
-
 
     def test_falls_back_to_arxiv_when_conference_format_unexpected(self):
         html = """
@@ -129,7 +128,9 @@ class TestAccessWebExtract:
             "2024",
         )
 
-    def test_urlerror_currently_crashes_due_to_unbound_source_code(self, monkeypatch, capsys):
+    def test_urlerror_currently_crashes_due_to_unbound_source_code(
+        self, monkeypatch, capsys
+    ):
         def fake_urlopen(url):
             raise URLError("boom")
 
