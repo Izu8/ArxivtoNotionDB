@@ -61,7 +61,7 @@ class get_paper_info:
                 conference_year = conference_year.group()
                 self.conference_journal, self.published_year = conference_year.split(" ")
           
-            except:
+            except AttributeError:
                 self.no_peer_review()           
     
     def no_peer_review(self):
