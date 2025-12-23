@@ -38,5 +38,5 @@ jobs:
         run: |
           echo "## Coverage Summary" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
-          pytest tests/ --cov=src --cov-report=term | grep -E "(TOTAL|Name)" | tail -n 2 >> $GITHUB_STEP_SUMMARY
+          pytest tests/ --cov=. --cov-report=term | grep -E "(TOTAL|Name)" | tail -n 2 >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
